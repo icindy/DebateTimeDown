@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+	<meta charset="UTF-8">
+	<title>首页|答辩倒计时系统</title>
+	<link rel="stylesheet" href="assets/scripts/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/scripts/jquery_onepage/css/onepage-scroll.css">
+	<!-- <link rel="stylesheet" href="assets/scripts/jquery_ferroSilder/css/jquery.ferro.ferroSlider.css"> -->
+	<link rel="stylesheet" href="assets/styles/index.css">
+	<script src="assets/scripts/seajs/sea.js" id="seajsnode"></script>
+
+	
+</head>
+<body>
+	
+	<!-- <h1 id="timedown"></h1>
+	<button id="beginBtn">开始</button>
+	<button id="stopBtn">停止</button>
+	<button id="resetBtn">重置</button>
+
+	<h1 id="timedown2"></h1>
+	<button id="beginBtn2">开始</button>
+	<button id="stopBtn2">停止</button>
+
+<div id="jquery_jplayer_1"></div>
+<div id="jp_container_1">
+ <a href="#" id="voiceplay" class="jp-play">Play</a>
+ <a href="#" class="jp-pause">Pause</a>
+</div> -->
+
+<div class="hideVoice">
+  <div id="jquery_jplayer_1"></div>
+  <button id="play1">play1</button>
+<!--   <div id="jp_container_1">
+   <a href="#" id="voiceplay" class="jp-play">Play</a>
+   <a href="#" class="jp-pause">Pause</a>
+  </div> -->
+</div>
+
+<div class="hideVoice">
+  <div id="jquery_jplayer_2"></div>
+  <button id="play2">play2</button>
+</div>
+
+<div class="hideVoice">
+  <div id="jquery_jplayer_3"></div>
+  <button id="play3">play2</button>
+</div>
+
+<div class="hideVoice">
+  <div id="jquery_jplayer_4"></div>
+  <button id="play4">play2</button>
+</div>
+
+<div class="main">
+  <div class="container-fluid">
+    <div class="row text-center margin-top-sm">
+    	<h1> 2014年"校友杯"辩论赛名校邀请赛<br>初赛第一场</h1>
+    </div>
+    <div class="row margin-top-lg">
+    	<div class="col-lg-5">
+    		<div>
+    		  <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <h1 class="pull-right bian_name_left">信息化<strong>会</strong>阻碍<br>传统文化的发展</h1>  
+          </div>   
+          <p class="daibiao_left">(武汉大学)</p>
+    		</div>
+    	</div>
+    	<div class="col-lg-2 text-center">
+    		<img src="assets/images/vs.png" style="height:100px;" alt="">
+    	</div>
+    	<div class="col-lg-5">
+    		<div>
+    			<div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <h1 class="pull-left bian_name_right">信息化<strong>不会</strong>阻碍<br>传统文化的发展</h1>   
+          </div>
+          <p class="daibiao_right">(西安交通大学)</p>
+    		</div>
+    	</div>
+    </div>
+
+    <div class="row">
+    	<div class="col-lg-12 text-center">
+    		<!-- <h1>开始</h1> -->
+    	</div>
+    </div>
+   
+  </div>
+  <div class="container-fluid">
+    <div class="row text-center margin-top-sm">
+      <h1> 提示声音</h1>
+    </div>
+    
+
+    <div class="row">
+      <div class="col-lg-12 text-center margin-top-xd">
+        <p><button id="btn1" type="button" class="btn btn-primary btn-lg" style="width:180px;">30秒提示声音</button></p>
+        <p><button id="btn2" type="button" class="btn btn-primary btn-lg" style="width:180px;">0秒提示声音</button></p>
+        <p><button id="btn3" type="button" class="btn btn-primary btn-lg" style="width:180px;">提问时间结束声音</button></p>
+        <p><button id="btn4" type="button" class="btn btn-primary btn-lg" style="width:180px;">回答时间结束声音</button></p>
+      </div>
+    </div>
+   
+  </div>
+
+
+  <!-- 第一回合 陈词与质询-->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+    	<h1>正方一辩陈词</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <h1 class="pull-right bian_name_left">信息化<strong>会</strong>阻碍<br>传统文化的发展</h1>  
+          </div>   
+          <p class="daibiao_left">(武汉大学)</p>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <h1 class="pull-left bian_name_right">信息化<strong>不会</strong>阻碍<br>传统文化的发展</h1>   
+          </div>
+          <p class="daibiao_right">(西安交通大学)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+    	<div class="col-lg-12 text-center">
+    		<h1 id="timedown1"></h1>
+  		<button id="beginBtn1" class="btn btn-primary btn-xs">开始</button>
+  		<button id="stopBtn1" class="btn btn-primary btn-xs">停止</button>
+  		<button id="resetBtn1" class="btn btn-primary btn-xs">重置</button>
+    	</div>
+    </div>
+   
+  </div>
+
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>反方四辩对正方一辩进行质询</h1>
+    </div>
+   <div class="row margin-top-xd">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <h1 class="pull-right bian_name_left">信息化<strong>会</strong>阻碍<br>传统文化的发展</h1>  
+          </div>   
+          <p class="daibiao_left">(武汉大学)</p>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <h1 class="pull-left bian_name_right">信息化<strong>不会</strong>阻碍<br>传统文化的发展</h1>   
+          </div>
+          <p class="daibiao_right">(西安交通大学)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown1_1"></h1>
+        <div style="display: none;">
+          <button id="beginBtn1_1">开始</button>
+          <button id="stopBtn1_1">停止</button>
+          <button id="resetBtn1_1">重置</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-lg-6">
+        <h2>提问时间</h2>
+        <h1 id="tw1"></h1>
+        <div style="display: none;">
+          
+          <button id="twbeginBtn1">开始</button>
+          <button id="twstopBtn1">停止</button>
+          <button id="twresetBtn1">重置</button>
+        </div>  
+      </div>
+      <div class="col-lg-6">
+        <h2>回答时间</h2>
+        <h1 id="hd1"></h1>
+        <div style="display: none;">
+          <button id="hdbeginBtn1">开始</button>
+          <button id="hdstopBtn1">停止</button>
+          <button id="hdresetBtn1">重置</button>
+        </div>  
+      </div>
+    </div>
+    <div class="row text-center">
+      <button id="flag2Btn" class="btn btn-primary btn-xs">切换计时</button>
+      <button id="flag2StopBtn" class="btn btn-primary btn-xs">停止计时</button>
+    </div>
+
+    
+  </div>
+  <!-- 第一回合结束 -->
+
+
+  <!-- 第二回合 陈词与质询-->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>反方一辩陈词</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <h1 class="pull-right bian_name_left">信息化<strong>会</strong>阻碍<br>传统文化的发展</h1>  
+          </div>   
+          <p class="daibiao_left">(武汉大学)</p>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <h1 class="pull-left bian_name_right">信息化<strong>不会</strong>阻碍<br>传统文化的发展</h1>   
+          </div>
+          <p class="daibiao_right">(西安交通大学)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown2"></h1>
+        <button id="beginBtn2" class="btn btn-primary btn-xs">开始</button>
+        <button id="stopBtn2" class="btn btn-primary btn-xs">停止</button>
+        <button id="resetBtn2" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>正方四辩对反方一辩进行质询</h1>
+    </div>
+    <div class="row margin-top-xm">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <h1 class="pull-right bian_name_left">信息化<strong>会</strong>阻碍<br>传统文化的发展</h1>  
+          </div>   
+          <p class="daibiao_left">(武汉大学)</p>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <h1 class="pull-left bian_name_right">信息化<strong>不会</strong>阻碍<br>传统文化的发展</h1>   
+          </div>
+          <p class="daibiao_right">(西安交通大学)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown2_1"></h1>
+        <div style="display:none;">
+          <button id="beginBtn2_1" >开始</button>
+          <button id="stopBtn2_1">停止</button>
+          <button id="resetBtn2_1">重置</button>
+        </div>
+      
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-lg-6">
+        <h2>提问时间</h2>
+        <h1 id="tw2"></h1>
+        <div style="display: none;">
+          
+          <button id="twbeginBtn2">开始</button>
+          <button id="twstopBtn2">停止</button>
+          <button id="twresetBtn2">重置</button>
+        </div>  
+      </div>
+      <div class="col-lg-6">
+        <h2>回答时间</h2>
+        <h1 id="hd2"></h1>
+        <div style="display: none;">
+          <button id="hdbeginBtn2">开始</button>
+          <button id="hdstopBtn2">停止</button>
+          <button id="hdresetBtn2">重置</button>
+        </div>  
+      </div>
+    </div>
+    <div class="row text-center">
+      <button id="flag3Btn" class="btn btn-primary btn-xs">切换计时</button>
+      <button id="flag3StopBtn" class="btn btn-primary btn-xs">停止计时</button>
+    </div>
+
+    
+  </div>
+  <!-- 第二回合结束 -->
+
+
+  <!-- 第三回合 驳论与质询-->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>正方二辩驳论</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <h1 class="pull-right bian_name_left">信息化<strong>会</strong>阻碍<br>传统文化的发展</h1>  
+          </div>   
+          <p class="daibiao_left">(武汉大学)</p>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <h1 class="pull-left bian_name_right">信息化<strong>不会</strong>阻碍<br>传统文化的发展</h1>   
+          </div>
+          <p class="daibiao_right">(西安交通大学)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown3"></h1>
+      <button id="beginBtn3" class="btn btn-primary btn-xs">开始</button>
+      <button id="stopBtn3" class="btn btn-primary btn-xs">停止</button>
+      <button id="resetBtn3" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>反方三辩对正方二辩进行质询</h1>
+    </div>
+    <div class="row margin-top-xd">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <h1 class="pull-right bian_name_left">信息化<strong>会</strong>阻碍<br>传统文化的发展</h1>  
+          </div>   
+          <p class="daibiao_left">(武汉大学)</p>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <h1 class="pull-left bian_name_right">信息化<strong>不会</strong>阻碍<br>传统文化的发展</h1>   
+          </div>
+          <p class="daibiao_right">(西安交通大学)</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown3_1"></h1>
+        <div style="display:none;">
+          <button id="beginBtn3_1">开始</button>
+          <button id="stopBtn3_1">停止</button>
+          <button id="resetBtn3_1">重置</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="row text-center">
+      <div class="col-lg-6">
+        <h2>提问时间</h2>
+        <h1 id="tw3"></h1>
+        <div style="display: none;">
+          
+          <button id="twbeginBtn3">开始</button>
+          <button id="twstopBtn3">停止</button>
+          <button id="twresetBtn3">重置</button>
+        </div>  
+      </div>
+      <div class="col-lg-6">
+        <h2>回答时间</h2>
+        <h1 id="hd3"></h1>
+        <div  style="display: none;">
+          <button id="hdbeginBtn3">开始</button>
+          <button id="hdstopBtn3">停止</button>
+          <button id="hdresetBtn3">重置</button>
+        </div>  
+      </div>
+    </div>
+    <div class="row text-center">
+      <button id="flag4Btn" class="btn btn-primary btn-xs">切换计时</button>
+      <button id="flag4StopBtn" class="btn btn-primary btn-xs">停止计时</button>
+    </div>
+
+
+    
+  </div>
+  <!-- 第三回合结束 -->
+
+  <!-- 第四回合 驳论与质询-->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>反方二辩驳论</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <h1 class="pull-right bian_name_left">信息化<strong>会</strong>阻碍<br>传统文化的发展</h1>  
+          </div>   
+          <p class="daibiao_left">(武汉大学)</p>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <h1 class="pull-left bian_name_right">信息化<strong>不会</strong>阻碍<br>传统文化的发展</h1>   
+          </div>
+          <p class="daibiao_right">(西安交通大学)</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown4"></h1>
+      <button id="beginBtn4" class="btn btn-primary btn-xs">开始</button>
+      <button id="stopBtn4" class="btn btn-primary btn-xs">停止</button>
+      <button id="resetBtn4" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>正方三辩对反方二辩进行质询</h1>
+    </div>
+    <div class="row margin-top-xd">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <h1 class="pull-right bian_name_left">信息化<strong>会</strong>阻碍<br>传统文化的发展</h1>  
+          </div>   
+          <p class="daibiao_left">(武汉大学)</p>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <h1 class="pull-left bian_name_right">信息化<strong>不会</strong>阻碍<br>传统文化的发展</h1>   
+          </div>
+          <p class="daibiao_right">(西安交通大学)</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown4_1"></h1>
+        <div style="display:none">
+          <button id="beginBtn4_1">开始</button>
+          <button id="stopBtn4_1">停止</button>
+          <button id="resetBtn4_1">重置</button>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row text-center">
+      <div class="col-lg-6">
+        <h2>提问时间</h2>
+        <h1 id="tw4"></h1>
+        <div style="display: none;">
+          
+          <button id="twbeginBtn4">开始</button>
+          <button id="twstopBtn4">停止</button>
+          <button id="twresetBtn4">重置</button>
+        </div>  
+      </div>
+      <div class="col-lg-6">
+        <h2>回答时间</h2>
+        <h1 id="hd4"></h1>
+        <div style="display: none;">
+          <button id="hdbeginBtn4">开始</button>
+          <button id="hdstopBtn4">停止</button>
+          <button id="hdresetBtn4">重置</button>
+        </div>  
+      </div>
+    </div>
+    <div class="row text-center">
+      <button id="flag5Btn" class="btn btn-primary btn-xs">切换计时</button>
+      <button id="flag5StopBtn" class="btn btn-primary btn-xs">停止计时</button>
+    </div>
+
+
+
+    
+  </div>
+  <!-- 第四回合结束 -->
+
+
+  <!-- 第五回合 质询小节-->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>正方三辩小结</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <h1 class="pull-right bian_name_left">信息化<strong>会</strong>阻碍<br>传统文化的发展</h1>  
+          </div>   
+          <p class="daibiao_left">(武汉大学)</p>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <h1 class="pull-left bian_name_right">信息化<strong>不会</strong>阻碍<br>传统文化的发展</h1>   
+          </div>
+          <p class="daibiao_right">(西安交通大学)</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown5"></h1>
+      <button id="beginBtn5" class="btn btn-primary btn-xs">开始</button>
+      <button id="stopBtn5" class="btn btn-primary btn-xs">停止</button>
+      <button id="resetBtn5" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>反方三辩小结</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <h1 class="pull-right bian_name_left">信息化<strong>会</strong>阻碍<br>传统文化的发展</h1>  
+          </div>   
+          <p class="daibiao_left">(武汉大学)</p>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <h1 class="pull-left bian_name_right">信息化<strong>不会</strong>阻碍<br>传统文化的发展</h1>   
+          </div>
+          <p class="daibiao_right">(西安交通大学)</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown5_1"></h1>
+      <button id="beginBtn5_1" class="btn btn-primary btn-xs">开始</button>
+      <button id="stopBtn5_1" class="btn btn-primary btn-xs">停止</button>
+      <button id="resetBtn5_1" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+    
+  </div>
+  <!-- 第五回合结束 -->
+
+  <!-- 第六回合 自由辩论-->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>自由辩论</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <h1 class="pull-right bian_name_left">信息化<strong>会</strong>阻碍<br>传统文化的发展</h1>  
+          </div>   
+          <p class="daibiao_left">(武汉大学)</p>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <h1 class="pull-left bian_name_right">信息化<strong>不会</strong>阻碍<br>传统文化的发展</h1>   
+          </div>
+          <p class="daibiao_right">(西安交通大学)</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-6 text-center">
+        <h1 id="timedown6"></h1>
+        <div style="display: none">
+          <button id="beginBtn6">开始</button>
+          <button id="stopBtn6">停止</button>
+          <button id="resetBtn6">重置</button>
+        </div>
+        
+      </div>
+      <div class="col-lg-6 text-center">
+        <h1 id="timedown6_1"></h1>
+        <div style="display:none;">
+          <button id="beginBtn6_1">开始</button>
+          <button id="stopBtn6_1">停止</button>
+          <button id="resetBtn6_1">重置</button>
+        </div>
+        
+      </div>
+    </div>
+    <div class="row text-center">
+      <button id="doubleBtn" class="btn btn-primary btn-xs">切换计时</button>
+      <button id="doubleStopBtn" class="btn btn-primary btn-xs">停止计时</button>
+    </div>
+    
+  </div>
+  <!-- 第六回合结束 -->
+
+    <!-- 第七回合 质询小节-->
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>反方总结陈词</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <h1 class="pull-right bian_name_left">信息化<strong>会</strong>阻碍<br>传统文化的发展</h1>  
+          </div>   
+          <p class="daibiao_left">(武汉大学)</p>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <h1 class="pull-left bian_name_right">信息化<strong>不会</strong>阻碍<br>传统文化的发展</h1>   
+          </div>
+          <p class="daibiao_right">(西安交通大学)</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown7"></h1>
+      <button id="beginBtn7" class="btn btn-primary btn-xs">开始</button>
+      <button id="stopBtn7" class="btn btn-primary btn-xs">停止</button>
+      <button id="resetBtn7" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="container-fluid" style="position: relative">
+    <div class="row text-center margin-top-sm">
+      <h1>正方总结陈词</h1>
+    </div>
+    <div class="row margin-top-md">
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/zheng.png" alt="..." class="img-circle bianfang_image pull-right">
+            <h1 class="pull-right bian_name_left">信息化<strong>会</strong>阻碍<br>传统文化的发展</h1>  
+          </div>   
+          <p class="daibiao_left">(武汉大学)</p>
+        </div>
+      </div>
+      <div class="col-lg-2 text-center">
+        <img src="assets/images/vs.png" style="height:100px;" alt="">
+      </div>
+      <div class="col-lg-5">
+        <div>
+          <div class="clearfix">
+            <img src="assets/images/fan.png" alt="..." class="img-circle bianfang_image pull-left">
+            <h1 class="pull-left bian_name_right">信息化<strong>不会</strong>阻碍<br>传统文化的发展</h1>   
+          </div>
+          <p class="daibiao_right">(西安交通大学)</p>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h1 id="timedown7_1"></h1>
+      <button id="beginBtn7_1" class="btn btn-primary btn-xs">开始</button>
+      <button id="stopBtn7_1" class="btn btn-primary btn-xs">停止</button>
+      <button id="resetBtn7_1" class="btn btn-primary btn-xs">重置</button>
+      </div>
+    </div>
+    
+  </div>
+  <!-- 第七回合结束 -->
+</div>    
+
+	<script>
+		// seajs配置
+		seajs.config({
+		  base: "./assets/scripts/",
+		  alias: {
+		      "jquery": "jquery/jquery",
+          "onepage": "jquery_onepage/js/jquery.onepage-scroll",
+		      // "boot": "bootstrap/js/bootstrap",
+		      "jplay": "jquery_jplay/jquery.jplayer.min",
+		      "timer": "jquery_custimer/jquery.custimer",
+		      "jstorage": "jquery_jstorage/jstorage.min"
+		      // "transit": "jquery_ferroSilder/jquery.transit.min",
+		      // "ferroSilder": "jquery_ferroSilder/jquery.ferro.ferroSlider-2.3.3.min"
+		    }
+		})
+
+		// 加载入口模块
+		seajs.use("application/application");
+		seajs.use("timedown/main");
+	</script>
+
+	
+</body>
+</html>
+

@@ -1,0 +1,77 @@
+{
+	"theme": "男女现在平等吗？",//辩题
+	"square" : {//正方
+		"name": "电子科技大学",
+		"image": "headrImage.png"
+		},
+	"opposition" : {//反方
+		"name": "西安交通大学",
+		"image": "headrImage.png"
+		},
+	"rule" : [//回合
+		{
+			"type":1,//代表一次性计时的双方对决
+			"sort":1,//代表整场比赛中的排序
+			"title":"第一回合",//回合名称
+			"brief":"这里是对于回合的简介",//回合简介
+			"isFirst":1,//正方是否是首先出场
+			"config":[//回合中的配置
+				{
+					"isSquare":0,//是否是正方
+					"player_role":"一辩",//选手角色
+					"player_name":"张迪",//选手名称
+					"player_headImage":"headerImag.png",//选手头像
+					"time": 180
+				},
+				{
+					
+					"isSquare":1,//是否是正方
+					"player_role":"四辩",//选手角色
+					"player_name":"张迪",//选手名称
+					"player_headImage":"headerImag.png",//选手头像
+					"time": 150
+				}
+			]
+
+		},
+		{
+			"type":2,//代表可暂停计时的双方对决
+			"sort":2,//代表整场比赛中的排序
+			"title":"第二回合",//回合名称
+			"brief":"这里是对于回合的简介",//回合简介
+			"isFirst":0,//正方是否是首先出场
+			"config":[//回合中的配置
+				{
+					
+					"isSquare":0,//是否是正方
+					"player_role":"群辩",//选手角色
+					"player_name":"张迪",//选手名称
+					"player_headImage":"headerImag.png",//选手头像
+					"time": 180
+				},
+				{
+					"isFirst":1,//是否是首先出场
+					"isSquare":1,//是否是正方
+					"player_role":"四辩",//选手角色
+					"player_name":"张迪",//选手名称
+					"player_headImage":"headerImag.png",//选手头像
+					"time": 150
+				}
+			]
+		},
+		{
+			"type":3,//代表单独陈述
+			"sort":3,//代表整场比赛中的排序
+			"title":"第二回合",//回合名称
+			"brief":"这里是对于回合的简介",//回合简介
+			"config":{
+				"isSquare":0,//是否是正方
+				"player_role":"群辩",//选手角色
+				"player_name":"张迪",//选手名称
+				"player_headImage":"headerImag.png",//选手头像
+				"time": 180
+			}
+		}
+	]
+
+}
